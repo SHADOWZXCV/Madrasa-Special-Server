@@ -3,8 +3,8 @@ This is a special local server, a part of my [Madrasa Management System](https:/
 
 ## Functionality & Purpose
 Its purpose is to:
-- Make new admin school emails, so that they can register.
-- Send activation codes to those emails, so that they can activate their account.
+- Make new admin school emails, and store in the database.
+- Send activation links to these emails, so that they can activate their account by clicking on it, redirecting them to the origin ( the front-end of the school system , which will take the  activation process from here onward ).
 
 ## How to use
 1. Install the server:
