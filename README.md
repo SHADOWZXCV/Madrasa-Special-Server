@@ -10,9 +10,21 @@ Its purpose is to:
 1. Install the server:
     ```bash
     npm install
+    ```
+2. Setup your .env file in root directory:
+    ```bash
+    NODE_ENV = "development or production"
+    DBUri = "dbUri"
+    dbName = "dbName"
+    origin = "the_origin_which_email_link_will_redirect_to"
+    emailForEservices = "add_your_email"
+    googleEmailPass = "password_for_gmail"
+    ```
+3. Run the server:
+    ```bash
     npm run dev
     ```
-2. Use insomnia, postman or curl, to send requests to the server.
+4. Use insomnia, postman or curl, to send requests to the server.
     
     Request body:
     ```json

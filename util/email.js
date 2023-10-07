@@ -17,9 +17,12 @@ const sendEmailToken = async (email, token) => {
         html: `Please follow the following link to validate your email and proceed with account creation: <a href="${process.env.origin}/enter/validate?email=${email}&token=${token}"> Click here </a>`
     };
 
-    transporter.sendMail(mailData, (err, data) => {
+    return transporter.sendMail(mailData, (err, data) => {
         if(err)
-        return logger.error(`Can't send email: ${err}`);
+        {
+            logger.error(`Can't send email: ${err}`);
+            return false;
+        }
         logger.info(`Email is sent: ${JSON.stringify(data)}`);
     });
 };

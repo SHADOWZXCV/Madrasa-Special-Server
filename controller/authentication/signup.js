@@ -19,9 +19,11 @@ const handleSignup = (req, res) => {
         if(user)
             return res.status(400).send({ error: 'already exists' });
 
-        school.save()
-        .then(doc => {
-            sendEmailToken(email, randToken);
+        sendEmailToken(email, randToken).then((data) => {
+            if(!data)
+                return res.status(500).send({ error: "Gmail credentials are incorrect!" });
+
+                school.save();
             res.status(200).send({ email: doc.email });
         })
         .catch(err => logger.error(err));
